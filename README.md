@@ -6,7 +6,7 @@ new plugins and wanted something with complex enough relations for realistic dev
 
 ## Installation
 
-- Add the plugin to your project with `composer require cnizzardini\cakephp-sakila-plugin`
+- Add the plugin to your project with `composer require cnizzardini/cakephp-sakila-plugin`
 
 - Run the migration and data seeder
 

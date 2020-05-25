@@ -1,9 +1,9 @@
 {
     "name": "cnizzardini/cakephp-sakila-plugin",
-    "description": "Automatically generate Swagger documentation from your exist routes with minimal comments and configuration",
+    "description": "A data seeder based on the MySQL Sakila database for CakePHP 4.x",
     "type": "cakephp-plugin",
     "license": "MIT",
-    "keywords": ["cakephp swagger","cakephp4 swagger","cake swagger"],
+    "keywords": ["cakephp","cakephp seed","cakephp dummy data","cakephp sakila"],
     "require": {
         "php": ">=7.2",
         "cakephp/cakephp": "^4.0"

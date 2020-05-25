@@ -23,7 +23,7 @@ You should now be able to bake a full application skeleton
 bin/cake bake all --everything
 ```
 
-Verify everything is working by running `bin/cakephp server`
+Verify everything is working by running `bin/cake server`
 
 ## Schema
 

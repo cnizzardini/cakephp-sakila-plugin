@@ -4,7 +4,9 @@
 
 This Cake 4 plugin comes with a snapshot and data seeds for the 
 [MySQL Sakila Sample Data](https://dev.mysql.com/doc/sakila/en/). I found myself needing test data when I am creating
-new plugins and wanted something with complex enough relations for realistic development.
+new plugins and wanted something with complex enough relations for realistic development. While the SQL dump provided 
+by MySQL is okay, it doesn't follow full Cake conventions. This plugin includes full cake conventions and additional 
+schema improvements.
 
 ## Install
 

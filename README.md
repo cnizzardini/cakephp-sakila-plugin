@@ -1,5 +1,7 @@
 # CakePHP Sakila Plugin
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/cnizzardini/cakephp-sakila-plugin.svg?style=flat-square)](https://packagist.org/packages/cnizzardini/cakephp-sakila-plugin)
+
 This Cake 4 plugin comes with a snapshot and data seeds for the 
 [MySQL Sakila Sample Data](https://dev.mysql.com/doc/sakila/en/). I found myself needing test data when I am creating
 new plugins and wanted something with complex enough relations for realistic development.

@@ -132,7 +132,7 @@ Verify everything is working by running `bin/cake server`
 | id               | integer   |
 | title            | string    |
 | description      | text      |
-| release_year     | string    |
+| release_year     | integer   |
 | language_id      | integer   |
 | rental_duration  | integer   |
 | rental_rate      | decimal   |

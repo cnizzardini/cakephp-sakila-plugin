@@ -27,6 +27,15 @@ bin/cake bake all --everything
 
 Verify everything is working by running `bin/cake server`
 
+## Unit Tests
+
+Some unit tests are included to ensure the schema can be built and seeders run. It uses `cakephp/migrations` and 
+SQLite for the data store.
+
+```bash
+vendor/bin/phpunit
+```
+
 ## Schema
 
 ### Actors

@@ -27,12 +27,12 @@ class Initial extends AbstractMigration
             ->addPrimaryKey(['id'])
             ->addColumn('first_name', 'string', [
                 'default' => null,
-                'limit' => 45,
+                'limit' => 64,
                 'null' => false,
             ])
             ->addColumn('last_name', 'string', [
                 'default' => null,
-                'limit' => 45,
+                'limit' => 64,
                 'null' => false,
             ])
             ->addColumn('modified', 'datetime', [
@@ -58,17 +58,17 @@ class Initial extends AbstractMigration
             ->addPrimaryKey(['id'])
             ->addColumn('address', 'string', [
                 'default' => null,
-                'limit' => 50,
+                'limit' => 64,
                 'null' => false,
             ])
             ->addColumn('address2', 'string', [
                 'default' => null,
-                'limit' => 50,
+                'limit' => 32,
                 'null' => true,
             ])
             ->addColumn('district', 'string', [
                 'default' => null,
-                'limit' => 20,
+                'limit' => 32,
                 'null' => false,
             ])
             ->addColumn('city_id', 'integer', [
@@ -426,10 +426,11 @@ class Initial extends AbstractMigration
                 'limit' => null,
                 'null' => true,
             ])
-            ->addColumn('release_year', 'string', [
+            ->addColumn('release_year', 'integer', [
                 'default' => null,
-                'limit' => null,
+                'limit' => 4,
                 'null' => true,
+                'signed' => false,
             ])
             ->addColumn('language_id', 'integer', [
                 'default' => null,
@@ -463,7 +464,7 @@ class Initial extends AbstractMigration
             ])
             ->addColumn('rating', 'string', [
                 'default' => 'G',
-                'limit' => null,
+                'limit' => 5,
                 'null' => true,
             ])
             ->addColumn('special_features', 'string', [

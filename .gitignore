@@ -1,3 +1,8 @@
+# Sakila specific files #
+##########################
+/sakila_test
+/config/Migrations/schema-dump-default.lock
+
 # CakePHP specific files #
 ##########################
 /config/app_local.php

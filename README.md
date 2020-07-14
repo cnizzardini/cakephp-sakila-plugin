@@ -1,14 +1,34 @@
 # CakePHP Sakila Plugin
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/cnizzardini/cakephp-sakila-plugin.svg?style=flat-square)](https://packagist.org/packages/cnizzardini/cakephp-sakila-plugin)
+
 This Cake 4 plugin comes with a snapshot and data seeds for the 
 [MySQL Sakila Sample Data](https://dev.mysql.com/doc/sakila/en/). I found myself needing test data when I am creating
-new plugins and wanted something with complex enough relations for realistic development.
+new plugins and wanted something with complex enough relations for realistic development. While the SQL dump provided 
+by MySQL is okay, it doesn't follow full Cake conventions. This plugin includes full cake conventions and additional 
+schema improvements.
 
-## Installation
+## Install
 
-- Add the plugin to your project with `composer require cnizzardini/cakephp-sakila-plugin`
+```bash
+composer require cnizzardini/cakephp-sakila-plugin
+bin/cake plugin load Sakila
+```
 
-- Run the migration and data seeder
+Alternatively after composer installing you can manually load the plugin in your Application:
+
+```php
+# src/Application.php
+public function bootstrap(): void
+{
+    // other logic...
+    $this->addPlugin('Sakila');
+}
+```
+
+## Usage
+
+Run migrate and seed with `-p Sakila`
 
 ```bash
 bin/cake migrations migrate -p Sakila
@@ -27,159 +47,12 @@ Verify everything is working by running `bin/cake server`
 
 ## Schema
 
-### Actors
-| Attribute  | Data Type |
-|------------|-----------|
-| id         | integer   |
-| first_name | string    |
-| last_name  | string    |
-| modified   | datetime  |
+See [config/Migrations/20200422015732_Initial.php](config/Migrations/20200422015732_Initial.php) for full schema.
 
-### Addresses
-| Attribute     | Data Type |
-|---------------|-----------|
-| id            | integer   |
-| address       | string    |
-| address2      | string    |
-| district      | string    |
-| city_id       | integer   |
-| postal_code   | string    |
-| phone         | string    |
-| location      | string    |
-| modified      | datetime  |
+## Unit Tests
 
-### Categories
-| Attribute | Data Type |
-|-----------|-----------|
-| id        | integer   |
-| name      | string    |
-| modified  | datetime  |
+Unit tests ensure the schema can be built and seeders run. It uses `cakephp/migrations` and SQLite for the data store.
 
-### Cities
-| Attribute     | Data Type |
-|---------------|-----------|
-| id            | integer   |
-| name          | string    |
-| country_id    | integer   |
-| modified      | datetime  |
-
-### Countries
-| Attribute     | Data Type |
-|---------------|-----------|
-| id            | integer   |
-| name          | string    |
-
-### Customers
-| Attribute     | Data Type |
-|---------------|-----------|
-| id            | integer   |
-| store_id      | integer   |
-| first_name    | string    |
-| last_name     | string    |
-| email         | string    |
-| address_id    | integer   |
-| is_active     | tinyint   |
-| created       | datetime  |
-| modified      | datetime  |
-
-### Employees
-| Attribute     | Data Type |
-|---------------|-----------|
-| id            | integer   |
-| first_name    | string    |
-| last_name     | string    |
-| address_id    | integer   |
-| picture       | binary    |
-| email         | string    |
-| store_id      | integer   |
-| is_active     | tinyint   |
-| username      | string    |
-| password      | string    |
-| modified      | datetime  |
-
-### FilmActors
-| Attribute | Data Type |
-|-----------|-----------|
-| uuid      | uuid      |
-| actor_id  | integer   |
-| film_id   | integer   |
-| modified  | datetime  |
-
-
-### FilmCategories
-| Attribute   | Data Type |
-|-------------|-----------|
-| uuid        | uuid      |
-| film_id     | integer   |
-| category_id | integer   |
-| modified    | datetime  |
-
-
-### FilmTexts
-| Attribute   | Data Type |
-|-------------|-----------|
-| uuid        | uuid      |
-| film_id     | integer   |
-| title       | string    |
-| description | text      |
-
-
-### Films
-| Attribute        | Data Type |
-|------------------|-----------|
-| id               | integer   |
-| title            | string    |
-| description      | text      |
-| release_year     | string    |
-| language_id      | integer   |
-| rental_duration  | integer   |
-| rental_rate      | decimal   |
-| length           | integer   |
-| replacement_cost | decimal   |
-| rating           | string    |
-| special_features | string    |
-| modified         | datetime  |
-
-### Inventories
-| Attribute | Data Type |
-|-----------|-----------|
-| id        | integer   |
-| film_id   | integer   |
-| store_id  | integer   |
-| modified  | datetime  |
-
-### Languages
-| Attribute | Data Type |
-|-----------|-----------|
-| id        | integer   |
-| name      | char      |
-
-### Payments
-| Attribute     | Data Type |
-|---------------|-----------|
-| id            | integer   |
-| customer_id   | integer   |
-| employee_id   | integer   |
-| rental_id     | integer   |
-| amount        | decimal   |
-| created       | datetime  |
-| modified      | datetime  |
-
-### Rentals
-| Attribute     | Data Type |
-|---------------|-----------|
-| id            | integer   |
-| rental_date   | datetime  |
-| inventory_id  | integer   |
-| customer_id   | integer   |
-| return_date   | datetime  |
-| employee_id   | integer   |
-| modified      | datetime  |
-
-### Stores
-| Attribute     | Data Type |
-|---------------|-----------|
-| id            | integer   |
-| employee_id   | integer   |
-| address_id    | integer   |
-| modified      | datetime  |
+```bash
+vendor/bin/phpunit
+```

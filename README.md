@@ -1,6 +1,11 @@
 # CakePHP Sakila Plugin
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/cnizzardini/cakephp-sakila-plugin.svg?style=flat-square)](https://packagist.org/packages/cnizzardini/cakephp-sakila-plugin)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.txt)
+[![Build Status](https://travis-ci.org/cnizzardini/cakephp-sakila-plugin.svg?branch=master)](https://travis-ci.org/github/cnizzardini/cakephp-sakila-plugin)
+[![Coverage Status](https://coveralls.io/repos/github/cnizzardini/cakephp-sakila-plugin/badge.svg?branch=master)](https://coveralls.io/githubcnizzardini/cakephp-sakila-plugin?branch=master)
+[![CakePHP](https://img.shields.io/badge/cakephp-%3E%3D%204.0-red?logo=cakephp)](https://book.cakephp.org/4/en/index.html)
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.2-8892BF.svg?logo=php)](https://php.net/)
 
 This Cake 4 plugin comes with a snapshot and data seeds for the 
 [MySQL Sakila Sample Data](https://dev.mysql.com/doc/sakila/en/). I found myself needing test data when I am creating

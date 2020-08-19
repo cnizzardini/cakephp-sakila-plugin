@@ -60,8 +60,11 @@ Cake\Cache\Cache::setConfig([
     ],
 ]);
 
-unlink(PROJECT . 'sakila_test');
-touch(PROJECT . 'sakila_test');
+if (file_exists(PROJECT . 'sakila_test')) {
+    unlink(PROJECT . 'sakila_test');
+} else {
+    touch(PROJECT . 'sakila_test');
+}
 
 // Store initial state
 Router::reload();

@@ -27,7 +27,6 @@ class SakilaTest extends TestCase
 
     public function testMigrate()
     {
-        unlink(PROJECT . 'sakila_test');
         $this->exec('migrations migrate -p Sakila');
         $this->assertExitSuccess();
 

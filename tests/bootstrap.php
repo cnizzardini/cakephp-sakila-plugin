@@ -60,6 +60,9 @@ Cake\Cache\Cache::setConfig([
     ],
 ]);
 
+unlink(PROJECT . 'sakila_test');
+touch(PROJECT . 'sakila_test');
+
 // Store initial state
 Router::reload();
 

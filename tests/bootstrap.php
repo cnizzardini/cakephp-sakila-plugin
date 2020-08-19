@@ -26,6 +26,7 @@ require_once 'vendor/autoload.php';
 if (!defined('DS')) {
     define('DS', DIRECTORY_SEPARATOR);
 }
+define('PROJECT', $root . DS);
 define('CORE_PATH', $root . DS . 'vendor' . DS . 'cakephp' . DS . 'cakephp' . DS);
 define('ROOT', $root . DS . 'tests' . DS . 'test_app');
 define('APP_DIR', 'App');

@@ -26,6 +26,7 @@ require_once 'vendor/autoload.php';
 if (!defined('DS')) {
     define('DS', DIRECTORY_SEPARATOR);
 }
+define('PROJECT', $root . DS);
 define('CORE_PATH', $root . DS . 'vendor' . DS . 'cakephp' . DS . 'cakephp' . DS);
 define('ROOT', $root . DS . 'tests' . DS . 'test_app');
 define('APP_DIR', 'App');
@@ -58,6 +59,12 @@ Cake\Cache\Cache::setConfig([
         'path' => TMP,
     ],
 ]);
+
+if (file_exists(PROJECT . 'sakila_test')) {
+    unlink(PROJECT . 'sakila_test');
+} else {
+    touch(PROJECT . 'sakila_test');
+}
 
 // Store initial state
 Router::reload();

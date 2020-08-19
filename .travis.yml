@@ -1,11 +1,9 @@
 language: php
 
 php:
-  - 7.2
-  - 7.3
   - 7.4
 
-dist: xenial
+dist: focal
 
 matrix:
   fast_finish: true
@@ -17,9 +15,6 @@ script:
   - |
     if [[ $TRAVIS_PHP_VERSION == '7.4' ]]; then
       export CODECOVERAGE=1 && vendor/bin/phpunit --verbose --coverage-clover=clover.xml
-      vendor/bin/phpcs --report=summary src
-      vendor/bin/phpstan analyse -n --no-progress src
-      vendor/bin/phpmd src/ ansi phpmd.xml
     else
       vendor/bin/phpunit
     fi

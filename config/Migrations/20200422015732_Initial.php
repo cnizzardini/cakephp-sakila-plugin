@@ -542,6 +542,11 @@ class Initial extends AbstractMigration
                 'limit' => 20,
                 'null' => false,
             ])
+            ->addColumn('is_active', 'tinyinteger', [
+                'default' => 1,
+                'limit' => 1,
+                'null' => false,
+            ])
             ->create();
 
         $this->table('payments')

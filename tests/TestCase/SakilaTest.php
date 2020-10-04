@@ -14,15 +14,6 @@ class SakilaTest extends TestCase
         parent::setUp();
         $this->setAppNamespace('TestApp');
         $this->useCommandRunner();
-
-        $this->controllers = APP . 'Controller' . DS;
-
-        foreach (scandir($this->controllers) as $file) {
-            if (!is_file($this->controllers . $file)) {
-                continue;
-            }
-            unlink($this->controllers . $file);
-        }
     }
 
     public function testMigrate()

@@ -15,7 +15,7 @@ schema improvements.
 
 ## Install
 
-```bash
+```console
 composer require cnizzardini/cakephp-sakila-plugin
 bin/cake plugin load Sakila
 ```
@@ -35,7 +35,7 @@ public function bootstrap(): void
 
 Run migrate and seed with `-p Sakila`
 
-```bash
+```console
 bin/cake migrations migrate -p Sakila
 bin/cake migrations seed -p Sakila
 ```
@@ -44,7 +44,7 @@ bin/cake migrations seed -p Sakila
 
 You should now be able to bake a full application skeleton
 
-```bash
+```console
 bin/cake bake all --everything
 ```
 
@@ -58,6 +58,6 @@ See [config/Migrations/20200422015732_Initial.php](config/Migrations/20200422015
 
 Unit tests ensure the schema can be built and seeders run. It uses `cakephp/migrations` and SQLite for the data store.
 
-```bash
+```console
 vendor/bin/phpunit
 ```

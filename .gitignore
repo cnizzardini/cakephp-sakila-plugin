@@ -47,3 +47,4 @@ nbproject/*
 # Sass preprocessor
 .sass-cache/
 /composer.lock
+/.phpunit.cache/

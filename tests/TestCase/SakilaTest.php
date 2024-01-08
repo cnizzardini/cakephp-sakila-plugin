@@ -2,7 +2,7 @@
 
 namespace Sakila\Test\TestCase;
 
-use Cake\TestSuite\ConsoleIntegrationTestTrait;
+use Cake\Console\TestSuite\ConsoleIntegrationTestTrait;
 use Cake\TestSuite\TestCase;
 
 class SakilaTest extends TestCase
@@ -13,7 +13,6 @@ class SakilaTest extends TestCase
     {
         parent::setUp();
         $this->setAppNamespace('TestApp');
-        $this->useCommandRunner();
     }
 
     public function testMigrate()

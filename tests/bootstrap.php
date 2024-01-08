@@ -5,6 +5,7 @@ use Cake\Core\Configure;
 use Cake\Core\Plugin;
 use Cake\Datasource\ConnectionManager;
 use Cake\Routing\Router;
+use Cake\TestSuite\Fixture\SchemaLoader;
 
 $findRoot = function ($root) {
     do {
@@ -20,12 +21,10 @@ $root = $findRoot(__FILE__);
 unset($findRoot);
 chdir($root);
 
-require_once 'vendor/cakephp/cakephp/src/basics.php';
-require_once 'vendor/autoload.php';
-
 if (!defined('DS')) {
     define('DS', DIRECTORY_SEPARATOR);
 }
+
 define('PROJECT', $root . DS);
 define('CORE_PATH', $root . DS . 'vendor' . DS . 'cakephp' . DS . 'cakephp' . DS);
 define('ROOT', $root . DS . 'tests' . DS . 'test_app');
@@ -66,6 +65,8 @@ if (file_exists(PROJECT . 'sakila_test')) {
     touch(PROJECT . 'sakila_test');
 }
 
+require_once CORE_PATH . 'config/bootstrap.php';
+
 // Store initial state
 Router::reload();
 
@@ -73,5 +74,3 @@ putenv('db_dsn=sqlite://127.0.0.1/sakila_test');
 putenv('DB=sqlite');
 ConnectionManager::setConfig('default', ['url' => getenv('db_dsn')]);
 ConnectionManager::setConfig('test', ['url' => getenv('db_dsn')]);
-
-Plugin::getCollection()->add(new \Migrations\Plugin());
